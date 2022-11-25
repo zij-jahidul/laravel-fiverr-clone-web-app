@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fiverr_skills', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->nullable();
             $table->string('skill_name')->nullable();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fiverr_skills');
+        Schema::dropIfExists('skills');
     }
 };

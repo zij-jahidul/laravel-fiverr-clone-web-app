@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fiverr_choices', function (Blueprint $table) {
+        Schema::create('levels', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->nullable();
-            $table->date('date_of_authorization')->nullable();
-            $table->longText('verification_report')->nullable();
-            $table->string('duration')->nullable();
-            $table->string('start_date')->nullable();
-            $table->string('end_date')->nullable();
+            $table->string('level')->nullable();
+            $table->string('level_type')->nullable();
             $table->enum('status', ['true', 'false'])->default('true');
             $table->timestamps();
         });
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fiverr_choices');
+        Schema::dropIfExists('levels');
     }
 };
